@@ -7,7 +7,7 @@ option java_multiple_files = true;
 message AddPostRequest {
     string header = 1;
     string content = 2;
-    string userId = 3;
+    int32 userId = 3;
     string date = 4;
     string token = 5;
     string username = 6;
@@ -21,8 +21,9 @@ message PostResponse {
 }
 
 message GetPostsRequest {
-    string pageSize = 1;
-    string timeStamp = 2;
+    int32 userId = 1;
+    string pageSize = 2;
+    string timeStamp = 3;
 }
 
 service PostService {
