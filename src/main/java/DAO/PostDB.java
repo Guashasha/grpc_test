@@ -18,6 +18,7 @@ public class PostDB {
 
     public Post addPost(Post post) {
         System.out.println("Post agregado...");
+        list.add(post);
         return post;
     }
 }
