@@ -1,0 +1,31 @@
+syntax="proto3";
+package postService;
+
+option java_package = "com.proto.post";
+option java_multiple_files = true;
+
+message AddPostRequest {
+    string header = 1;
+    string content = 2;
+    string userId = 3;
+    string date = 4;
+    string token = 5;
+    string username = 6;
+}
+
+message PostResponse {
+    string header = 1;
+    string content = 2;
+    string date = 3;
+    string username = 4;
+}
+
+message GetPostsRequest {
+    string pageSize = 1;
+    string timeStamp = 2;
+}
+
+service PostService {
+    rpc add(AddPostRequest) returns (PostResponse);
+    rpc getAll(GetPostsRequest) returns (stream PostResponse);
+}
